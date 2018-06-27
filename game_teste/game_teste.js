@@ -263,14 +263,17 @@ function draw() {
     
     
     
-    
+  }else if(scenes == 3.5){
+    lv = 3;
+    sec = 1;
+    background(pre_Lv[2]);   
   }else if(scenes == 4){
     //------------------------------
-   background(bgL[scenes]);
-   image(power_bar,85,65);
-   image(power_bar,720-(85+120),65);
-   if(player.newQ){
-      lv = 3;
+    background(bgL[scenes]);
+    image(power_bar,85,65);
+    image(power_bar,720-(85+120),65);
+    if(player.newQ){
+      lv = 2;
       if(sec==1){
         sec = 2;
       }else{
@@ -423,10 +426,7 @@ function keyPressed(){
         qnt = true;
         scenes = 5;
       }else{
-        reset();
-        quizSpawn();
-        qnt = true;
-        scenes = 4;
+        scenes = 3.5;
       }
     }else if(scenes === 4 && player.dead || scenes === 4 && enemies[0].dead){
       reset();
